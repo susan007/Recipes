@@ -1,16 +1,10 @@
 <template>
   <div>
-    <headBar v-bind:title="title" class="head">
+    <head-bar v-bind:title="pageone.title" class="head"></head-bar>
 
-    </headBar>
+    <mcontent v-bind:mcontent="pageone.mcontent" class="mcontent"></mcontent>
 
-    <mcontent v-bind:mcontent="mcontent" class="mcontent">
-
-    </mcontent>
-
-    <footBar class="foot">
-
-    </footBar>
+    <foot-bar class="foot"></foot-bar>
   </div>
 </template>
 
@@ -26,35 +20,51 @@
     },
     data() {
       return {
-        title: '主标题',
-        mcontent: '主内容'
+        pageone: {
+          title: '首页',
+          mcontent: '我是首页'
+        },
+        pagetwo: {
+          title: '发现',
+          mcontent: '我是发现'
+        },
+        pagethree: {
+          title: '我的',
+          mcontent: '我是我的我'
+        },
+        pagefour: {
+          title: '设置',
+          mcontent: '在我这设置'
+        }
       }
     }
   }
 </script>
 
-<style>
+<style scoped>
 
-  body{
+  body {
     margin: 0;
     padding: 0;
     background-color: #fbfaf7;
   }
 
-  .head{
-    position: absolute;
+  .head {
+    position: fixed;
     top: 0;
+    left: 0;
   }
 
-  .mcontent{
+  .mcontent {
     height: 100%;
     width: 100%;
   }
 
-  .foot{
+  .foot {
     width: 100%;
-    position: absolute;
+    position: fixed;
     bottom: 0;
+    left: 0;
   }
 
 </style>

@@ -18,7 +18,7 @@
 
 </script>
 
-<style>
+<style scoped>
   .content {
     width: 100%;
     text-align: center;

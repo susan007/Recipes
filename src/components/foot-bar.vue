@@ -1,10 +1,10 @@
 <template>
   <div id="foot">
     <ul>
-      <li><a href="#" style="">首页</a></li>
-      <li><a href="#">发现</a></li>
-      <li><a href="#">我的</a></li>
-      <li><a href="#">设置</a></li>
+      <li><router-link to="/mainPage">首页</router-link></li>
+      <li><router-link to="/mainPage">发现</router-link></li>
+      <li><router-link to="/mainPage">我的</router-link></li>
+      <li><router-link to="/mainPage">设置</router-link></li>
       <div style="clear: both"></div>
     </ul>
 
@@ -14,13 +14,13 @@
 
 
 <script>
-  //导出模块的意思？
-  export default{}
+  export default{
 
+  }
 </script>
 
 
-<style>
+<style scoped>
   ul {
     list-style: none;
     background-color: cornflowerblue;
@@ -29,6 +29,8 @@
 
   ul li {
     width: 25%;
+    height: 50px;
+    line-height: 50px;
     float: left;
     text-align: center;
   }
@@ -38,11 +40,9 @@
     padding: 0;
   }
 
-  a {
-    height: 50px;
-    line-height: 50px;
-    color: white;
+  a{
     text-decoration: none;
+    color: white;
   }
 
   li:hover {

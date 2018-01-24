@@ -1,11 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
 import mainPage from  '@/page/mainPage.vue'
 import login from '@/page/login.vue'
 
 Vue.use(Router)
-Vue.use(mainPage)
 
 export default new Router({
   routes: [
@@ -13,6 +11,11 @@ export default new Router({
       path: '/',
       name: 'login',
       component: login
+    },
+    {
+      path: '/mainPage',
+      name: 'mainPage',
+      component: mainPage
     }
   ]
 })

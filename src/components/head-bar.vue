@@ -1,6 +1,6 @@
 <template>
   <div id="head" class="head">
-    <span class="title-left">返回</span>
+    <span class="title-left"><router-link to="/">返回</router-link></span>
     <span class="title-mid">{{title}}</span>
     <span class="title-right"></span>
   </div>
@@ -16,7 +16,7 @@
   }
 </script>
 
-<style>
+<style scoped>
   .head {
     width: 100%;
     height: 50px;
@@ -49,5 +49,10 @@
   .title-mid{
     display: inline-block;
     width: 60%;
+  }
+
+  a{
+    text-decoration: none;
+    color: white;
   }
 </style>

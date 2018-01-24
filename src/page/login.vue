@@ -12,50 +12,52 @@
       <input v-on:input="inputFun" type="password" placeholder="请输入密码"/>
     </div>
 
-    <button v-on:click="loginIn">登录</button>
+    <button>
+      <router-link to="/mainPage">登录</router-link>
+    </button>
   </div>
 </template>
 
 <script>
   export default{
 
-    methods:{
-        loginIn:function () {
-          alert('被点击')
-        },
-      inputFun:function () {
+    methods: {
+      inputFun: function () {
         console.log('输入')
       },
     },
-    watch:{
-
-    }
+    watch: {}
   }
 
 </script>
 
-<style>
+<style scoped>
 
-  body{
+  body {
     margin: 0;
     padding: 0;
   }
 
-  .content{
+  .content {
     width: 100%;
     text-align: center;
   }
 
-  .tip{
+  a{
+    text-decoration: none;
+    color: white;
+  }
+
+  .tip {
     font-size: 1.5rem;
     padding-bottom: 50px;
   }
 
-  .minput{
+  .minput {
     padding-bottom: 10px;
   }
 
-  button{
+  button {
     margin-top: 20px;
     width: 200px;
     height: 50px;

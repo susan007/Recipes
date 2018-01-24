@@ -19,3 +19,5 @@ export default new Router({
     }
   ]
 })
+
+var bus=new Vue();

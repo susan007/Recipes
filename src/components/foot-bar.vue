@@ -1,10 +1,10 @@
 <template>
   <div id="foot">
     <ul>
-      <li><router-link to="/mainPage">首页</router-link></li>
-      <li><router-link to="/mainPage">发现</router-link></li>
-      <li><router-link to="/mainPage">我的</router-link></li>
-      <li><router-link to="/mainPage">设置</router-link></li>
+      <li v-on:click="setTip(1)"><router-link to="/mainPage">首页</router-link></li>
+      <li v-on:click="setTip"><router-link to="/mainPage">发现</router-link></li>
+      <li v-on:click="setTip"><router-link to="/mainPage">我的</router-link></li>
+      <li v-on:click="setTip"><router-link to="/mainPage">设置</router-link></li>
       <div style="clear: both"></div>
     </ul>
 
@@ -15,7 +15,11 @@
 
 <script>
   export default{
-
+      methods:{
+          setTip:function (index) {
+            bus.$emit('',index);
+          }
+      }
   }
 </script>
 

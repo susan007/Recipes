@@ -1,8 +1,10 @@
 <template>
   <div>
-    <head-bar v-bind:title="pageone.title" class="head"></head-bar>
+    <head-bar v-bind:title="title" class="head"></head-bar>
 
-    <mcontent v-bind:mcontent="pageone.mcontent" class="mcontent"></mcontent>
+    <mcontent v-bind:mcontent="mcontent" class="mcontent"></mcontent>
+
+    <h3>{{$route.query.title}}-{{$route.query.mcontent}}</h3>
 
     <foot-bar class="foot"></foot-bar>
   </div>
@@ -20,22 +22,8 @@
     },
     data() {
       return {
-        pageone: {
-          title: '首页',
-          mcontent: '我是首页'
-        },
-        pagetwo: {
-          title: '发现',
-          mcontent: '我是发现'
-        },
-        pagethree: {
-          title: '我的',
-          mcontent: '我是我的我'
-        },
-        pagefour: {
-          title: '设置',
-          mcontent: '在我这设置'
-        }
+        title: '页面标题',
+        mcontent:this.$route.query.mcontent
       }
     }
   }

@@ -4,31 +4,40 @@
     <div class="tip">想知道有什么？</div>
     <div class="minput">
       <label>姓名</label>
-      <input v-on:input="inputFun" type="text" placeholder="请输入用户名"/>
+      <input v-model="name" type="text" placeholder="请输入用户名"/>
     </div>
 
     <div class="minput">
       <label>密码</label>
-      <input v-on:input="inputFun" type="password" placeholder="请输入密码"/>
+      <input v-model="pwd" type="password" placeholder="请输入密码"/>
     </div>
 
-    <button>
-      <router-link to="/mainPage">登录</router-link>
+    <button @click="isOk">
+      <router-link v-if="ok" to="/mainPage">点击登录</router-link>
+      <label v-else>点击登录</label>
     </button>
   </div>
 </template>
 
 <script>
   export default{
-
-    methods: {
-      inputFun: function () {
-        console.log('输入')
-      },
+    data(){
+      return {
+        ok: false
+      }
     },
-    watch: {}
+    methods: {
+      isOk: function () {
+        console.log(this.name + '*****' + this.pwd)
+        if (this.name == 'admin' && this.pwd == 'admin') {
+          this.ok = true
+        } else {
+          alert('用户名或密码错误')
+          this.ok = false
+        }
+      }
+    }
   }
-
 </script>
 
 <style scoped>
@@ -43,7 +52,7 @@
     text-align: center;
   }
 
-  a{
+  a {
     text-decoration: none;
     color: white;
   }
@@ -66,6 +75,4 @@
     border-radius: 8px;
     color: white;
   }
-
-
 </style>

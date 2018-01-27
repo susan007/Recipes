@@ -1,6 +1,6 @@
 <template>
   <div id="head" class="head">
-    <span class="title-left"><router-link to="/">返回</router-link></span>
+    <span class="title-left" @click="goBack">返回</span>
     <span class="title-mid">{{title}}</span>
     <span class="title-right"></span>
   </div>
@@ -12,6 +12,11 @@
       title: String,
       default: '默认标题',
       required:true
+    },
+    methods:{
+        goBack:function () {
+          window.history.go(-1)
+        }
     }
   }
 </script>

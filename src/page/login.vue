@@ -1,7 +1,7 @@
 <template>
   <div id="content" class="content">
-    <img src="../assets/logo.png"/>
-    <div class="tip">想知道有什么？</div>
+    <img src="../assets/wa.jpg"/>
+    <div class="tip">欢迎蛙儿回家</div>
     <div class="minput">
       <label>姓名</label>
       <input v-model="name" type="text" placeholder="请输入用户名"/>
@@ -13,7 +13,7 @@
     </div>
 
     <button @click="isOk">
-      <router-link v-if="ok" to="/mainPage">点击登录</router-link>
+      <router-link v-if="ok" :to="{path:'/mainPage',query:{title:'首页',mcontent:'首页内容在此'}}">点击登录</router-link>
       <label v-else>点击登录</label>
     </button>
   </div>
@@ -23,7 +23,9 @@
   export default{
     data(){
       return {
-        ok: false
+        ok: '',
+        name:'',
+        pwd:''
       }
     },
     methods: {
@@ -35,6 +37,7 @@
           alert('用户名或密码错误')
           this.ok = false
         }
+        console.log("***"+this.ok)
       }
     }
   }
@@ -50,6 +53,7 @@
   .content {
     width: 100%;
     text-align: center;
+    margin-top: 60px;
   }
 
   a {
@@ -74,5 +78,10 @@
     background-color: cornflowerblue;
     border-radius: 8px;
     color: white;
+  }
+
+  img{
+    width: 150px;
+    height: 150px;
   }
 </style>

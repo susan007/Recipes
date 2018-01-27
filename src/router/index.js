@@ -4,9 +4,7 @@ import Count from '@/components/count.vue'
 
 import mainPage from  '@/page/mainPage.vue'
 import login from '@/page/login.vue'
-import hello from '@/page/hello.vue'
-import hi1 from '@/page/helloSonOne.vue'//hello的子页面
-import hi2 from '@/page/helloSonTwo.vue'//hello的子页面
+import Error from '@/page/Error.vue'
 import person from '@/page/personal.vue'//hello的子页面
 
 
@@ -17,35 +15,29 @@ export default new Router({
     {
       path: '/',
       name: 'login',//传递值？
-      component: login
+      component: login,
+      alias: '/home'
     },
     {
       path: '/mainPage',
       name: 'mainPage',
-      component: mainPage
+      component: mainPage,
+      alias: '/pageMain' //链接别名 用path 或者用alias都可以
     }, {
       path: '/count',
       name: 'Count',
       component: Count
-    }, {
-      path: '/hello',
-      name: 'hello',
-      component: hello,
-      children: [
-        {
-          path: 'hi1',
-          name: 'hello/hi1',
-          component: hi1
-        }, {
-          path: 'hi2',
-          name: 'hi2',
-          component: hi2
-        }]
-    }, {
+    },
+    {
       path: '/person/:name/:pwd',//链接传参
       component: person,
       name: 'person',
-      redirect:'/mainPage'
+    }, {
+      path: '/goHome',
+      redirect: '/',//重定向
+    }, {
+      path: '*',  //配置404页面
+      component: Error
     }
   ]
 })

@@ -1,18 +1,29 @@
 <template>
   <div id="foot">
     <ul>
-      <li>
-        <router-link :to="{path:'/mainPage',query:{title:'首页',mcontent:'首页展示'}}">首页</router-link>
-      </li>
-      <li>
-        <router-link :to="{path:'/mainPage',query:{title:'发现',mcontent:'发现主页'}}">发现</router-link>
-      </li>
-      <li>
-        <router-link :to="{path:'/mainPage',query:{title:'我的',mcontent:'我的主页'}}">我的</router-link>
-      </li>
-      <li>
-        <router-link to="/person/洪典典/123456">设置</router-link>
-      </li>
+      <router-link :to="{path:'/mainPage',query:{title:'首页',mcontent:'首页展示'}}">
+        <li>
+          首页
+        </li>
+      </router-link>
+
+      <router-link :to="{path:'/mainPage',query:{title:'发现',mcontent:'发现主页'}}">
+        <li>
+          发现
+        </li>
+      </router-link>
+
+      <router-link :to="{path:'/mainPage',query:{title:'我的',mcontent:'我的主页'}}">
+        <li>
+          我的
+        </li>
+      </router-link>
+
+      <router-link to="/person/静静是小花/123456">
+        <li>
+          设置
+        </li>
+      </router-link>
       <div style="clear: both"></div>
     </ul>
   </div>

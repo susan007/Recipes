@@ -1,5 +1,5 @@
 <template>
-  <div id="content">
+  <div id="content" class="content">
     <img src="../assets/logo.png"/>
     <div class="content">
       {{mcontent}}
@@ -22,6 +22,7 @@
   .content {
     width: 100%;
     text-align: center;
+    margin-top: 60px;
   }
 
 </style>

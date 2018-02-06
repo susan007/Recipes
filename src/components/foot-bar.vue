@@ -14,7 +14,7 @@
         </li>
       </router-link>
 
-      <router-link :to="{path:'/mainPage',query:{title:'我的',mcontent:'我的主页'}}">
+      <router-link to="/setting">
         <li>
           我的
         </li>

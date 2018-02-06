@@ -38,11 +38,6 @@
         message:''
       }
     },
-    mounted(){
-      bus.$on('msg',(e) => {
-        this.message = msg
-      })
-    }
   }
 </script>
 

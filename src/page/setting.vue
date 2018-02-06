@@ -1,8 +1,9 @@
 <template>
   <div>
 
+
     <el-container>
-      <el-header>Header</el-header>
+      <el-header>饿了么element</el-header>
       <el-container>
         <el-aside width="200px">Aside</el-aside>
         <el-main>Main</el-main>
@@ -18,14 +19,14 @@
 
 <script>
   import bus from '../store/bus.js'
+  import headBar from '../components/head-bar.vue'
   export default{
-      methods:{
-          bus(){
-              bus.$emit('msg','要传递的消息，你收到没有？')
-          }
+    methods: {
+      bus(){
+        bus.$emit('msg', '要传递的消息，你收到没有？')
       }
+    }
   }
-
 
 </script>
 

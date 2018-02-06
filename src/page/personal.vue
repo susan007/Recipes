@@ -2,6 +2,7 @@
   <div id="content">
 
     <head-bar v-bind:title="title"></head-bar>
+
     <router-link to="/mainPage">返回上一页</router-link>
     <br/>
     <router-link to="/home">登录页别名回到登录页</router-link>
@@ -18,27 +19,36 @@
       {{$route.params.pwd}}
     </div>
 
+    <h3>setting 传过来的数据-->{{message}}</h3>
+
   </div>
 </template>
 
 <script>
   import headBar from '../components/head-bar.vue'
+  import bus from '../store/bus.js'
+
   export default{
     components: {
       headBar
     },
     data(){
       return {
-          title:'个人信息'
+        title: '个人信息',
+        message:''
       }
+    },
+    mounted(){
+      bus.$on('msg',(e) => {
+        this.message = msg
+      })
     }
   }
-
 </script>
 
 <style scoped>
 
-  .content{
+  .content {
     margin: 0;
     padding: 0;
   }

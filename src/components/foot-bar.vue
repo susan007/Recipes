@@ -1,13 +1,14 @@
 <template>
   <div id="foot">
     <ul>
+      <!--导航组件，通过传入'to'属性指定链接，<router-link>会被渲染成一个'<a>'标签-->
       <router-link :to="{path:'/mainPage',query:{title:'首页',mcontent:'首页展示'}}">
         <li>
           首页
         </li>
       </router-link>
 
-      <router-link :to="{path:'/mainPage',query:{title:'发现',mcontent:'发现主页'}}">
+      <router-link to="/count">
         <li>
           发现
         </li>

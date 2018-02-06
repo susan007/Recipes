@@ -39,6 +39,14 @@
         }
         console.log("***"+this.ok)
       }
+    },
+    beforeRouteEnter:(to,from,next)=>{
+        console.log('准备进入路由模板')
+      next();//一定要写
+    },
+    beforeRouteLeave:(to,from,next)=>{
+        console.log('准备离开params路由模板')
+      next();
     }
   }
 </script>

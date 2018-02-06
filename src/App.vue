@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <transition name="fade" mode="out-in">
+      <!--路由匹配到的组件将渲染在这个标签里-->
       <router-view></router-view>
     </transition>
 

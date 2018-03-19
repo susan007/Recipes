@@ -5,9 +5,7 @@ import mainPage from  '@/page/mainPage.vue'
 import login from '@/page/login.vue'
 import Error from '@/page/Error.vue'
 import person from '@/page/personal.vue'//hello的子页面
-
 import setting from '@/page/setting.vue'
-
 
 Vue.use(Router)
 

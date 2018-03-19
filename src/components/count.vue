@@ -25,19 +25,10 @@
     data(){
       return {
         msg: 'vuex 使用实例',
-        title: '发现页面'
+        title: '发现页面',
       }
     },
     store,
-//    computed:{
-//        count(){
-//            return this.$store.state.count
-//        }
-//    }
-//    computed:mapState({
-//      count:state=>state.count
-//    })
-//    computed: mapState(['count'])
     methods: {
       ...mapMutations(['reduce']),//简写的方法无法传递参数
       ...mapActions(['addAction','reduceAction'])

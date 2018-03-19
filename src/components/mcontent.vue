@@ -4,10 +4,13 @@
     <div class="content">
       {{mcontent}}
     </div>
+    <h3>picker 实例</h3>
+    <picker></picker>
   </div>
 </template>
 
 <script>
+//  import picker from './picker.vue'
   export default{
     props: {
       mcontent: String,

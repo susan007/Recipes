@@ -14,7 +14,6 @@
 
     <button @click="isOk">
       <router-link v-if="ok" :to="{path:'/mainPage',query:{title:'首页',mcontent:'首页内容在此'}}">点击登录</router-link>
-      <label v-else>点击登录</label>
     </button>
   </div>
 </template>
@@ -23,7 +22,7 @@
   export default{
     data(){
       return {
-        ok: '',
+        ok: false,
         name:'',
         pwd:''
       }

@@ -126,6 +126,15 @@
   ]
   let yuans = []
   let jiaos = []
+  let yuanUnit = [{
+    text: '元',
+    value: 0
+  }]
+  let jiaoUnit = [{
+    text: '角',
+    value: 0
+  }]
+
 
   export default{
     components: {
@@ -149,7 +158,7 @@
         confirmTxt: '确定',
         yuans: [],
         jiaos: [],
-        numData: [data1,data2]
+        numData: []
       }
     },
     methods: {
@@ -160,19 +169,24 @@
       handleSelect(index, args) {
         //选择的项目在这块做处理
         this.selectedText.splice(index, 1, args[2].join('，'))
-        console.log(">>>"+this.selectedText[0])
+        console.log('>>>' + args[1][0] + '>>>' + args[2])
       }
     },
     mounted () {
       this.$refs.picker0.setData([data1])
     },
     created () {
-//      for (var i = 0; i < 100; i++) {
-//        yuans.push(i)
-//        jiaos.push(i)
-//      }
-//      this.numData.push(yuans)
-//      this.numData.push(jiaos)
+      for (var i = 0; i < 100; i++) {
+        var obj = new Object()
+        obj.text = i
+        obj.value = i
+        yuans.push(obj)
+        jiaos.push(obj)
+      }
+      this.numData.push(yuans)
+      this.numData.push(yuanUnit)
+      this.numData.push(jiaos)
+      this.numData.push(jiaoUnit)
     }
   }
 </script>

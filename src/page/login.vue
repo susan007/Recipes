@@ -85,7 +85,7 @@
     width: 200px;
     height: 50px;
     line-height: 50px;
-    background-color: #2782D7;
+    background-color: #10AEFF;
     border-radius: 8px;
     color: white;
     border: 1px solid #fff;

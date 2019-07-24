@@ -1,20 +1,18 @@
 <template>
   <div id="content" class="content">
-    <img src="../assets/wa.jpg"/>
-    <div class="tip">欢迎蛙儿回家</div>
+    <img class="head" src="../assets/head.jpeg"/>
+
     <div class="minput">
-      <label>姓名</label>
-      <input v-model="name" type="text" placeholder="请输入用户名"/>
+      <img src="../assets/icon-user.png"/>
+      <input v-model="userName" type="text" placeholder="请输入用户名"/>
     </div>
 
     <div class="minput">
-      <label>密码</label>
-      <input v-model="pwd" type="password" placeholder="请输入密码"/>
+      <img src="../assets/icon-password.png"/>
+      <input v-model="userPassword" type="password" placeholder="请输入密码"/>
     </div>
 
-    <button @click="isOk">
-      <router-link v-if="ok" :to="{path:'/mainPage',query:{title:'首页',mcontent:'首页内容在此'}}">点击登录</router-link>
-    </button>
+    <button @click="login">登录</button>
   </div>
 </template>
 
@@ -23,20 +21,15 @@
     data(){
       return {
         ok: false,
-        name:'',
-        pwd:''
+        userName:'admin',
+        userPassword:'admin'
       }
     },
     methods: {
-      isOk: function () {
-        console.log(this.name + '*****' + this.pwd)
-        if (this.name == 'admin' && this.pwd == 'admin') {
-          this.ok = true
-        } else {
-          alert('用户名或密码错误')
-          this.ok = false
+      login: function () {
+        if (this.userName === 'admin' && this.userPassword === 'admin') {
+          this.$router.push({path:'/mainPage',query:{title:'首页',mcontent:'首页内容在此'}})
         }
-        console.log("***"+this.ok)
       }
     },
     beforeRouteEnter:(to,from,next)=>{
@@ -68,13 +61,23 @@
     color: white;
   }
 
-  .tip {
-    font-size: 1.5rem;
-    padding-bottom: 50px;
+  .minput {
+    padding-bottom: 1rem;
   }
 
-  .minput {
-    padding-bottom: 10px;
+  .minput img {
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+  }
+
+  .minput input{
+    padding: 0.1rem 0.1rem;
+    border-radius: 8px;
+    border: 1px solid #707070;
+    height: 2rem;
+    color: #707070;
+    text-align: center;
   }
 
   button {
@@ -82,13 +85,17 @@
     width: 200px;
     height: 50px;
     line-height: 50px;
-    background-color: cornflowerblue;
+    background-color: #2782D7;
     border-radius: 8px;
     color: white;
+    border: 1px solid #fff;
+    font-size: medium;
   }
 
-  img{
+  .head {
     width: 150px;
     height: 150px;
+    margin-bottom: 3rem;
+    border-radius: 50%;
   }
 </style>

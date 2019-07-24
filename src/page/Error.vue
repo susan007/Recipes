@@ -1,6 +1,6 @@
 <template>
   <div class="content">
-    <img src="../assets/wa.jpg"/>
+    <img src="../assets/head.jpeg"/>
     <h3>404 Not Found</h3>
     <h4>{{message}}</h4>
   </div>
@@ -25,8 +25,9 @@
     background-color: tomato;
   }
 
-  img{
+  .content img{
     width: 150px;
     height: 150px;
+    border-radius: 50%;
   }
 </style>

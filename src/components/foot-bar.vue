@@ -1,70 +1,40 @@
 <template>
-  <div id="foot">
-    <ul>
-      <!--导航组件，通过传入'to'属性指定链接，<router-link>会被渲染成一个'<a>'标签-->
-      <router-link :to="{path:'/mainPage',query:{title:'首页',mcontent:'首页展示'}}">
-        <li>
-          首页
-        </li>
-      </router-link>
-
-      <router-link to="/count">
-        <li>
-          发现
-        </li>
-      </router-link>
-
-      <router-link to="/setting">
-        <li>
-          我的
-        </li>
-      </router-link>
-
-      <router-link to="/person/静静是小花/123456">
-        <li>
-          设置
-        </li>
-      </router-link>
-      <div style="clear: both"></div>
-    </ul>
-  </div>
+  <ul>
+    <li v-for="(item, index) in items" :key="index" @click="$emit('footClick', index)">{{item}}</li>
+  </ul>
 </template>
 
 <script>
-  export default{}
+  // const items =
+  export default{
+    data() {
+      return {
+        items: ['首页', '发现', '我的']
+      }
+    }
+  }
 </script>
 
 <style scoped>
   ul {
     list-style: none;
-    background-color: cornflowerblue;
+    background-color: #10AEFF;
     width: 100%;
-  }
-
-  ul li {
-    width: 25%;
-    height: 50px;
-    line-height: 50px;
-    float: left;
-    text-align: center;
-  }
-
-  ul, li {
     margin: 0;
     padding: 0;
   }
 
-  a {
-    text-decoration: none;
+  ul li {
+    width: 33.3%;
+    height: 3rem;
+    line-height: 3rem;
+    float: left;
+    text-align: center;
     color: white;
   }
 
   li:hover {
-    background-color: #91a7ff;
-  }
-
-  li:active {
-    background-color: #d0d9ff;
+    background-color: #108Eea;
   }
 
 </style>

@@ -2,11 +2,13 @@
   <div>
     <head-bar v-bind:title="title" class="head"></head-bar>
 
-    <!--<mcontent v-bind:mcontent="mcontent" class="mcontent"></mcontent>-->
+    <!--占位-->
+    <div style="height: 3rem"></div>
 
-    <h3>{{$route.query.title}}-{{$route.query.mcontent}}</h3>
+    <home @typeSearch="typeSearch"></home>
 
-    <h3>测试picker</h3>
+
+
     <div @click="showPicker(0)" ref="select0">{{ selectedText[0] }}</div>
     <picker @select="handleSelect(0,arguments)" :selected-index="selectedIndex[0]"
             ref="picker0" :title="title" :cancelTxt="cancelTxt"
@@ -17,16 +19,16 @@
             ref="picker1" :title="title" :cancelTxt="cancelTxt"
             :confirmTxt="confirmTxt"></picker>
 
-    <foot-bar class="foot"></foot-bar>
+    <foot-bar class="foot" @footClick="footClick"></foot-bar>
   </div>
 </template>
 
 <script>
   //导入组件
-  import mcontent from '../components/mcontent.vue'
   import headBar from '../components/head-bar.vue'
   import footBar from '../components/foot-bar.vue'
   import picker from '../components/picker.vue'
+  import home from '../components/home.vue'
 
   let data1 = [
     {
@@ -92,38 +94,6 @@
       value: 16
     }
   ]
-  let data2 = [
-    {
-      text: '输出',
-      value: 'a'
-    }, {
-      text: '控制',
-      value: 'b'
-    },
-    {
-      text: '核心',
-      value: 'c'
-    },
-    {
-      text: '爆发',
-      value: 'd'
-    },
-    {
-      text: '辅助',
-      value: 'e'
-    },
-    {
-      text: '打野',
-      value: 'f'
-    },
-    {
-      text: '逃生',
-      value: 'g'
-    }, {
-      text: '先手',
-      value: 'h'
-    }
-  ]
   let yuans = []
   let jiaos = []
   let yuanUnit = [{
@@ -135,15 +105,13 @@
     value: 0
   }]
 
-
-  export default{
+  export default {
     components: {
-      mcontent, headBar, footBar, picker
+      headBar, footBar, picker, home
     },
     data() {
       return {
-        title: '',
-        mcontent: this.$route.query.mcontent,
+        title: '首页',
         selectedIndex: [
           [0],
           [1, 0],
@@ -161,21 +129,10 @@
         numData: []
       }
     },
-    methods: {
-      showPicker(index) {
-        let picker = this.$refs['picker' + index]
-        picker.show()
-      },
-      handleSelect(index, args) {
-        //选择的项目在这块做处理
-        this.selectedText.splice(index, 1, args[2].join('，'))
-        console.log('>>>' + args[1][0] + '>>>' + args[2])
-      }
-    },
-    mounted () {
+    mounted() {
       this.$refs.picker0.setData([data1])
     },
-    created () {
+    created() {
       for (var i = 0; i < 100; i++) {
         var obj = new Object()
         obj.text = i
@@ -187,6 +144,23 @@
       this.numData.push(yuanUnit)
       this.numData.push(jiaos)
       this.numData.push(jiaoUnit)
+    },
+    methods: {
+      showPicker(index) {
+        let picker = this.$refs['picker' + index]
+        picker.show()
+      },
+      handleSelect(index, args) {
+        //选择的项目在这块做处理
+        this.selectedText.splice(index, 1, args[2].join('，'))
+        console.log('>>>' + args[1][0] + '>>>' + args[2])
+      },
+      typeSearch(type) {
+        alert(type)
+      },
+      footClick(index) {
+        alert(index)
+      }
     }
   }
 </script>
@@ -203,11 +177,7 @@
     position: fixed;
     top: 0;
     left: 0;
-  }
-
-  .mcontent {
-    height: 100%;
-    width: 100%;
+    z-index: 9;
   }
 
   .foot {

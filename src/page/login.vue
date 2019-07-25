@@ -13,6 +13,8 @@
     </div>
 
     <button @click="login">登录</button>
+
+    <span style="display: block;width: 100%;color: #aaa; position: fixed;bottom: 3rem; font-size: small">唯有美食与爱不可辜负</span>
   </div>
 </template>
 
@@ -28,7 +30,7 @@
     methods: {
       login: function () {
         if (this.userName === 'admin' && this.userPassword === 'admin') {
-          this.$router.push({path:'/mainPage',query:{title:'首页',mcontent:'首页内容在此'}})
+          this.$router.push({path:'/mainPage'})
         }
       }
     },

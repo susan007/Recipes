@@ -5,7 +5,9 @@
     <!--占位-->
     <div style="height: 3rem"></div>
 
-    <home @typeSearch="typeSearch"></home>
+    <!--<home @typeSearch="typeSearch"></home>-->
+
+    <find></find>
 
 
 
@@ -29,6 +31,7 @@
   import footBar from '../components/foot-bar.vue'
   import picker from '../components/picker.vue'
   import home from '../components/home.vue'
+  import find from '../components/find'
 
   let data1 = [
     {
@@ -107,7 +110,7 @@
 
   export default {
     components: {
-      headBar, footBar, picker, home
+      headBar, footBar, picker, home, find
     },
     data() {
       return {

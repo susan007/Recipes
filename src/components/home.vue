@@ -16,7 +16,7 @@
     <!--分类 end-->
 
     <!--轮播 start-->
-    <van-swipe :autoplay="3000" style="margin-left: 1rem;margin-right: 1rem;border-radius: 0.3rem">
+    <van-swipe :autoplay="3000" style="margin-left: 1rem;margin-right: 1rem;border-radius: 0.3rem" indicator-color="#10AEFF">
       <van-swipe-item v-for="(image, index) in images" :key="index">
         <img v-lazy="image"/>
       </van-swipe-item>
@@ -24,7 +24,7 @@
     <!--轮播 end-->
 
     <!--横向商品列表 start-->
-    <van-tabs v-model="active">
+    <van-tabs v-model="active" color="#10AEFF">
       <van-tab title="品牌秒杀">
         <van-list
           v-model="loading"

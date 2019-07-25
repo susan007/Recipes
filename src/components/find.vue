@@ -1,21 +1,42 @@
 <template>
-  <div style="overflow-x: scroll;width: 200px;">
+  <div style="overflow-y: hidden;overflow-x: scroll;">
     <ul style="">
-      <li>黄瓜</li>
-      <li>黄瓜</li>
-      <li>黄瓜</li>
-      <li>黄瓜</li>
-      <li>黄瓜</li>
-      <li>黄瓜</li>
-      <li>黄瓜</li>
-      <li>黄瓜</li>
-      <li>黄瓜</li>
-      <li>黄瓜</li>
-      <li>黄瓜</li>
-      <li>黄瓜</li>
-      <li>黄瓜</li>
-      <li>黄瓜</li>
-      <li>黄瓜</li>
+      <li>
+        <div style="display: inline-block">
+          <img src="../../static/icon-egg.png" style="width: 3rem;height: 3rem"/>
+          <div>乌拉</div>
+        </div>
+      </li>
+      <li>
+        <div style="display: inline-block">
+          <img src="../../static/icon-egg.png" style="width: 3rem;height: 3rem"/>
+          <div>乌拉</div>
+        </div>
+      </li>
+      <li>
+        <div style="display: inline-block">
+          <img src="../../static/icon-egg.png" style="width: 3rem;height: 3rem"/>
+          <div>乌拉</div>
+        </div>
+      </li>
+      <li>
+        <div style="display: inline-block">
+          <img src="../../static/icon-egg.png" style="width: 3rem;height: 3rem"/>
+          <div>乌拉</div>
+        </div>
+      </li>
+      <li>
+        <div style="display: inline-block">
+          <img src="../../static/icon-egg.png" style="width: 3rem;height: 3rem"/>
+          <div>乌拉</div>
+        </div>
+      </li>
+      <li>
+        <div style="display: inline-block">
+          <img src="../../static/icon-egg.png" style="width: 3rem;height: 3rem"/>
+          <div>乌拉</div>
+        </div>
+      </li>
     </ul>
   </div>
 </template>
@@ -31,10 +52,18 @@
 </script>
 
 <style scoped>
+  ::-webkit-scrollbar {
+    display: none;
+  }
 
-  ul li{
-    background-color: limegreen;
-    display: inline;
+  ul {
+    width: 650px;
+  }
+
+  ul>li{
+    list-style: none;
+    display: inline-block;
+    width: 100px;
   }
 
 </style>

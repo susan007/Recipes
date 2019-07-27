@@ -81,7 +81,7 @@
 
     <van-cell title="爱学课堂" label="手把手教学，包看包会" />
     <!--瀑布流start-->
-
+    <pull class="pull" :items="pullItems"></pull>
     <!--瀑布流end-->
 
   </div>
@@ -89,14 +89,57 @@
 
 <script>
   import { Card, Cell} from 'vant'
+  import pull from './pull.vue'
   export default {
     components: {
       [Card.name]: Card,
-      [Cell.name]: Cell
+      [Cell.name]: Cell,
+      pull
     },
     data() {
       return {
-
+        pullItems: [
+          {
+            src: '/static/p-cake.jpg',
+            tips: '属于你的我的光影日记'
+          },
+          {
+            src: '/static/p-cake2.jpg',
+            tips: '甜甜的味道弥漫在空气中，那是恋爱的味道~'
+          },
+          {
+            src: '/static/p-cake4.jpg',
+            tips: '低脂蛋糕，好吃不胖'
+          },
+          {
+            src: '/static/p-cake5.jpg',
+            tips: '那一抹温柔的颜色，融化在我心里，好像天上的云朵棉花糖，柔柔的暖暖的'
+          },
+          {
+            src: '/static/p-lemon.jpg',
+            tips: '夏日专属炫彩冰激凌，你不来一根吗？O(∩_∩)O'
+          },
+          {
+            src: '/static/p-water.jpg',
+            tips: '柠檬的酸甜才是夏日的清新味道'
+          },
+          {
+            src: '/static/p-water2.png',
+            tips: '这一杯自制饮料，开启元气满满的一天！！！'
+          },
+          {
+            src: '/static/p-iceream.jpg',
+            tips: '诠释了什么叫做人淡如菊，正如这杯淡雅的冰饮沉静自然'
+          },
+          {
+            src: '/static/bg-panda.jpg',
+            tips: '生日快乐'
+          },
+          {
+            src: '/static/p-cake3.jpg',
+            tips: '温柔，感受樱花的芬芳❤'
+          }
+        ]
       }
     }
   }
@@ -138,6 +181,10 @@
 
   img{
     border-radius: 0.2rem;
+  }
+
+  .pull{
+    padding: 0 0.2rem;
   }
 
 </style>

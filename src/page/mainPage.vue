@@ -7,7 +7,9 @@
 
     <!--<home @typeSearch="typeSearch"></home>-->
 
-    <find></find>
+    <!--<find></find>-->
+
+    <detail-card :cards="cards"></detail-card>
 
 
 
@@ -32,6 +34,7 @@
   import picker from '../components/picker.vue'
   import home from '../components/home.vue'
   import find from '../components/find'
+  import detailCard from '../components/detail-card.vue'
 
   let data1 = [
     {
@@ -110,7 +113,7 @@
 
   export default {
     components: {
-      headBar, footBar, picker, home, find
+      headBar, footBar, picker, home, find, detailCard
     },
     data() {
       return {
@@ -129,7 +132,24 @@
         confirmTxt: '确定',
         yuans: [],
         jiaos: [],
-        numData: []
+        numData: [],
+        cards: [
+          {
+            src: '/static/card-fruit.jpg',
+            title: '鲜货！今夏最IN的冷萃咖啡，敲好喝！',
+            detail: '三顿半限时特惠！24颗装买两件立减20还加赠彩蛋呦~'
+          },
+          {
+            src: '/static/card-meat.jpg',
+            title: '特卖！减肥餐有了它们，美味增倍无负担！',
+            detail: '三顿半限时特惠！24颗装买两件立减20还加赠彩蛋呦~'
+          },
+          {
+            src: '/static/bg-panda.jpg',
+            title: '创意！好吃的蛋糕和好看的表演！',
+            detail: '三顿半限时特惠！24颗装买两件立减20还加赠彩蛋呦~'
+          }
+        ]
       }
     },
     mounted() {

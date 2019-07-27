@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    body {
+      background: #e3e3e3;
+      padding: 50px 0;
+    }
+
+    .my-container {
+      position: relative;
+      background: #5C97FF;
+      overflow: hidden;
+    }
+
+    .my-container:before {
+      content: ' ';
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      opacity: 0.6;
+      background: url('http://placekitten.com/1500/1000') no-repeat 50% 0;
+      -ms-background-size: cover;
+      -o-background-size: cover;
+      -moz-background-size: cover;
+      -webkit-background-size: cover;
+      background-size: cover;
+    }
+
+    .my-container h1 {
+      padding: 50px;
+      text-align: center;
+      z-index: 2;
+      position: relative;
+      color: #fff;
+    }
+
+    article {
+      background: #fff;
+      padding: 15px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="my-container">
+  <h1>Scotch Scotch Scotch</h1>
+</div>
+<article>
+  <p>In the criminal justice system, the people are represented by two separate yet equally important groups. The
+    police who investigate crime and the district attorneys who prosecute the offenders. These are their
+    stories.</p>
+
+  <p>Look for the Union Label when you are buying a coat, dress, or blouse. Remember, somewhere our union's
+    sewing, our wages going to feed the kids, and run the house. We work hard, but who's complaining. Thanks to
+    the I.L.G. we're paying our way. So always look for the Union Label. It means we're able to make it in the
+    U.S.A.!</p>
+
+  <p>I am Duncan Macleod, born 400 years ago in the Highlands of Scotland. I am Immortal, and I am not alone. For
+    centuries, we have waited for the time of the Gathering when the stroke of a sword and the fall of a head will
+    release the power of the Quickening. In the end, there can be only one.</p>
+</article>
+
+</body>
+</html>

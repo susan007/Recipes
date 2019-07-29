@@ -3,7 +3,7 @@
 
     <head-bar v-bind:title="title"></head-bar>
 
-    <router-link to="/mainPage">返回上一页</router-link>
+    <router-link to="/main">返回上一页</router-link>
     <br/>
     <router-link to="/home">登录页别名回到登录页</router-link>
     <br/>

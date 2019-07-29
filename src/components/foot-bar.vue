@@ -1,40 +1,35 @@
 <template>
-  <ul>
-    <li v-for="(item, index) in items" :key="index" @click="$emit('footClick', index)">{{item}}</li>
-  </ul>
+  <van-tabbar v-model="mActive" @change="$emit('footBarChange', mActive)" active-color="#FF500A" inactive-color="#333" class="footBar">
+    <van-tabbar-item v-for="(footBar, index) in footBarItems" :key="index" :name="footBar.name" :icon="footBar.icon" :to="footBar.to">{{footBar.text}}</van-tabbar-item>
+  </van-tabbar>
 </template>
 
 <script>
-  // const items =
+  import { Tabbar, TabbarItem } from 'vant'
   export default{
+    components: {
+      [Tabbar.name]: Tabbar,
+      [TabbarItem.name]: TabbarItem
+    },
+    props: {
+      footBarItems: Array,
+      active: String
+    },
     data() {
       return {
-        items: ['首页', '发现', '我的']
+        mActive: this.active
+      }
+    },
+    watch: {
+      return (val) {
+        this.mActive = val
       }
     }
   }
 </script>
 
 <style scoped>
-  ul {
-    list-style: none;
-    background-color: #10AEFF;
-    width: 100%;
-    margin: 0;
-    padding: 0;
+  .footBar {
+    background-color: #f7f8fa;
   }
-
-  ul li {
-    width: 33.3%;
-    height: 3rem;
-    line-height: 3rem;
-    float: left;
-    text-align: center;
-    color: white;
-  }
-
-  li:hover {
-    background-color: #108Eea;
-  }
-
 </style>

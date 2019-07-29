@@ -30,7 +30,7 @@
     methods: {
       login: function () {
         if (this.userName === 'admin' && this.userPassword === 'admin') {
-          this.$router.push({path:'/mainPage'})
+          this.$router.push({path:'/main/home'})
         }
       }
     },

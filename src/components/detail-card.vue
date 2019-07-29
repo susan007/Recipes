@@ -1,8 +1,8 @@
 <template>
   <div>
-    <div class="card" v-for="(card, index) in cards" :key="index" :style="`background-image: url(${card.src})`">
-      <h4>{{card.title}}</h4>
-      <p>{{card.detail}}</p>
+    <div class="card" :style="`background-image: url(${src})`">
+      <h4>{{title}}</h4>
+      <p>{{detail}}</p>
     </div>
   </div>
 </template>
@@ -10,7 +10,9 @@
 <script>
   export default {
     props: {
-      cards: Array
+      title: String,
+      detail: String,
+      src: String
     }
   }
 </script>

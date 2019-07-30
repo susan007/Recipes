@@ -1,16 +1,22 @@
 <template>
   <div id="content" class="content">
+    <!--头像start-->
     <img class="head" src="../assets/head.jpeg"/>
+    <!--头像end-->
 
+    <!--userName start-->
     <div class="minput">
       <img src="../assets/icon-user.png"/>
       <input v-model="userName" type="text" placeholder="请输入用户名"/>
     </div>
+    <!--userName end-->
 
+    <!--password start-->
     <div class="minput">
       <img src="../assets/icon-password.png"/>
       <input v-model="userPassword" type="password" placeholder="请输入密码"/>
     </div>
+    <!--password start-->
 
     <button @click="login">登录</button>
 

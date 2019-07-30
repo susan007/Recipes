@@ -22,8 +22,8 @@
 
 <script>
   import { Search, Icon } from 'vant'
-  import grid from './grid'
-  import swipe from  './swipe'
+  import grid from '@/components/grid'
+  import swipe from  '@/components/swipe'
   import tabs from '@/components/tabs'
   export default {
     components: {

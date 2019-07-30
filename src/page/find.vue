@@ -89,7 +89,7 @@
 
 <script>
   import { Card, Cell} from 'vant'
-  import pull from './pull.vue'
+  import pull from '@/components/pull.vue'
   export default {
     components: {
       [Card.name]: Card,

@@ -80,4 +80,5 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 
 ## 关于
 
+* [静静是小花博客](https://susan007.github.io)
 * 项目示例图片从网络获取，非商业应用，如有侵权请联系邮箱`370317168@qq.com`删除
